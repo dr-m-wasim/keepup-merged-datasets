@@ -1,0 +1,21 @@
+{
+  "AFND": {
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "credibility"
+    },
+    "label_mapping": {
+      "credible" : "real",
+      "not credible" : "fake"
+    }
+  },
+  "All-Data": {
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "type"
+    },
+    "label_mapping": {}
+  }
+}
