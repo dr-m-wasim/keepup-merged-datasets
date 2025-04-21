@@ -5,10 +5,12 @@ from utils.io_helpers import load_dataset, save_dataset, load_mappings
 from utils.df_helpers import get_AFND_dataframe
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
+import traceback
 
 DATA_PATHS = {
-    "AFND" : "datasets/text datasets/AFND",
+    #"AFND" : "datasets/text datasets/AFND",
     "All-Data": "datasets/text+image/text+image/all_data.csv",
+    "Badbot" : "datasets/text datasets/badbot.csv"
 }
 
 # fill this dictionary for only special cases
@@ -31,14 +33,18 @@ def process_and_map(dataset_name, df, mapping):
     })
 
     labels_to_keep = list(label_mapping.keys())
-
+    
     if len(labels_to_keep) != 0:
+        
+        # Convert the labels to string
+        df['label'] = df['label'].astype(str)
+        
         # Only select the rows which contain the specific labels defined in the mapping values
         df = df[df['label'].isin(labels_to_keep)]
 
         # Map credible to real and not credible to fake
         df['label'] = df['label'].map(label_mapping)
-
+        
     # Clean text fields
     df["title"] = df["title"].astype(str).apply(clean_text)
     df["body"] = df["body"].astype(str).apply(clean_text)
@@ -71,6 +77,7 @@ def main():
             except Exception as e:
                 name = futures[future]
                 print(f"Error processing {name}: {e}")
+                traceback.print_exc()
 
     
     # Concatenate all processed DataFrames
