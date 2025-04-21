@@ -17,5 +17,81 @@
       "label": "type"
     },
     "label_mapping": {}
+  },
+  "ANS-Arabic-Satirical-News-train":{
+    "column_mapping": {
+      "title": "claim_s",
+      "body": "body",
+      "label": "fake_flag"
+    },
+    "label_mapping": {
+      "1": "fake",
+      "0": "real"
+    }
+  },
+  "ANS-Arabic-Satirical-News-test":{
+    "column_mapping": {
+      "title": "claim_s",
+      "body": "body",
+      "label": "fake_flag"
+    },
+    "label_mapping": {
+      "1": "fake",
+      "0": "real"
+    }
+  },
+  "ANS-Arabic-Satirical-News-dev":{
+    "column_mapping": {
+      "title": "claim_s",
+      "body": "body",
+      "label": "fake_flag"
+    },
+    "label_mapping": {
+      "1": "fake",
+      "0": "real"
+    }
+  },
+  "Arabic-Satirical-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "fake": "fake"
+    }
+  },
+  "Ax-to-Grind-Urdu-Dataset":{
+    "column_mapping": {
+      "title": "News Items",
+      "body": "body",
+      "label": "Label"
+    },
+    "label_mapping": {
+      "FAKE": "fake",
+      "TRUE": "real"
+    }
+  },
+  "BAAI_biendata2019":{
+    "column_mapping": {
+      "title": "text",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "1": "fake",
+      "0": "real"
+    }
+  },
+  "Badbot":{
+    "column_mapping": {
+      "title": "Headline",
+      "body": "Body",
+      "label": "Label"
+    },
+    "label_mapping": {
+      "0": "fake",
+      "1": "real"
+    }
   }
 }
