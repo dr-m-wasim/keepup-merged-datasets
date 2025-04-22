@@ -116,7 +116,7 @@ def process_and_map(dataset_name, df, mapping):
     })
 
     labels_to_keep = list(label_mapping.keys())
-
+    
     if len(labels_to_keep) != 0:
 
         # Convert the labels to string
