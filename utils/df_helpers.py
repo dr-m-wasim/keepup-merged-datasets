@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+import xml.etree.ElementTree as ET
 
 def get_AFND_dataframe(path):
     # Paths
@@ -49,3 +50,278 @@ def get_AFND_dataframe(path):
     df = pd.DataFrame(articles_data)
 
     return df
+
+def get_Arabic_Satirical_News(path):
+
+    news_texts = []
+    labels = []
+
+    # Iterate through all text files in the folder
+    for filename in os.listdir(path):
+        if filename.endswith('.txt'):
+            file_path = os.path.join(path, filename)
+            with open(file_path, 'r', encoding='utf-8') as file:
+                content = file.read().strip()
+                news_texts.append(content)
+                labels.append('fake')
+
+    # Create a DataFrame
+    df = pd.DataFrame({
+        'body': news_texts,
+        'label': labels
+    })
+
+    return df
+
+def get_BET_Bend_the_Truth(path):
+
+    data = []
+
+    # Walk through train and test folders
+    for split in ['Train', 'Test']:
+        for label in ['Fake', 'Real']:
+            folder_path = os.path.join(path, split, label)
+            for filename in os.listdir(folder_path):
+                if filename.endswith('.txt'):
+                    file_path = os.path.join(folder_path, filename)
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        content = file.read().strip()
+                        data.append({
+                            'text': content,
+                            'label': label.lower(),  # 'fake' or 'real'
+                        })
+
+    df_data = pd.DataFrame(data)
+
+    return df_data
+
+def get_BuzzFeed_2017(path):
+
+    articles_folder = os.path.join(path, 'articles')
+    csv_path = os.path.join(path, 'overview.csv')   
+    
+    df_csv = pd.read_csv(csv_path)
+
+    data = []
+
+    for _, row in df_csv.iterrows():
+        xml_filename = row['XML']
+        veracity = row['veracity']
+        xml_path = os.path.join(articles_folder, xml_filename)
+
+        try:
+            tree = ET.parse(xml_path)
+            root = tree.getroot()
+
+            title = root.findtext('title', default='').strip()
+            maintext = root.findtext('mainText', default='').strip()
+
+            data.append({
+                'title': title,
+                'maintext': maintext,
+                'veracity': veracity
+            })
+
+        except Exception as e:
+            print(f"Error parsing {xml_filename}: {e}")
+
+    df_data = pd.DataFrame(data)
+
+    return df_data
+
+def get_BuzzFeed_Political_News(path):
+
+    data = []
+
+    for label in ['Fake', 'Real']:
+        body_folder = os.path.join(path, label)
+        title_folder = os.path.join(path, f"{label}_titles")
+
+        for filename in os.listdir(body_folder):
+            if filename.endswith('.txt'):
+                file_number = filename.split('_')[0].replace('.txt', '')
+                body_path = os.path.join(body_folder, filename)
+                title_path = os.path.join(title_folder, f"{file_number}_{label}.txt")
+
+                try:
+                    with open(body_path, 'r', encoding='windows-1252') as body_file:
+                        body = body_file.read().strip()
+                except Exception as e:
+                    body = f"An error occurred reading body: {e}"
+
+                try:
+                    with open(title_path, 'r', encoding='windows-1252') as title_file:
+                        title = title_file.read().strip()
+                except Exception as e:
+                    title = f"An error occurred reading title: {e}"
+
+                data.append({
+                    'title': title,
+                    'body': body,
+                    'label': label
+                })
+
+    df_data = pd.DataFrame(data)
+
+    return df_data
+
+def get_excel_datasets(path):
+
+    df = pd.read_excel(path)
+
+    return df
+
+def get_FakeNewsNet(path):
+
+    # This will hold our extracted data
+    records = []
+
+    # Loop over each label folder
+    for folder_name in os.listdir(path):
+        folder_path = os.path.join(path, folder_name)
+        
+        # Skip if not a directory
+        if not os.path.isdir(folder_path):
+            continue
+
+        # Label is the part after the last underscore
+        label = folder_name.split('_')[-1]
+
+        # Traverse each subfolder containing the news_article.json
+        for subfolder in os.listdir(folder_path):
+            subfolder_path = os.path.join(folder_path, subfolder)
+            if not os.path.isdir(subfolder_path):
+                continue
+
+            json_file_path = os.path.join(subfolder_path, 'news_article.json')
+
+            # Check if the file exists
+            if os.path.exists(json_file_path):
+                try:
+                    with open(json_file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+
+                    # Append only if title and text exist
+                    if 'title' in data and 'text' in data:
+                        records.append({
+                            'title': data['title'],
+                            'text': data['text'],
+                            'label': label
+                        })
+                except Exception as e:
+                    print(f"Error reading {json_file_path}: {e}")
+
+    # Create DataFrame
+    df = pd.DataFrame(records)
+
+    return df
+
+def get_FA_KES(path):
+
+    df = pd.read_csv(path , encoding='unicode_escape')
+
+    return df
+
+def get_fang(path):
+
+    path_real = os.path.join(path, 'fang_real.csv') 
+    path_fake = os.path.join(path, 'fang_fake.csv') 
+
+    fang_fake = pd.read_csv(path_fake)
+    fang_real = pd.read_csv(path_real)
+
+    fang_real['label'] = 'real'
+    fang_fake['label'] = 'fake'
+
+    # Concatenate the two datasets
+    df = pd.concat([fang_real, fang_fake]).reset_index()
+
+    return df
+
+def get_FANG_Covid(path):
+
+    # List to store all the data
+    data = []
+
+    # Loop through all files in the folder
+    for filename in os.listdir(path):
+        if filename.endswith(".json"):
+            file_path = os.path.join(path, filename)
+            with open(file_path, "r", encoding="utf-8") as file:
+                try:
+                    content = json.load(file)
+                    header = content.get("header", "")
+                    article = content.get("article", "")
+                    label = content.get("label", "")
+                    data.append({"header": header, "article": article, "label": label})
+                except json.JSONDecodeError as e:
+                    print(f"Error reading {filename}: {e}")
+
+    # Convert to pandas DataFrame
+    df = pd.DataFrame(data)
+
+    return df
+
+def get_FineFake(path):
+
+    fine_fake = pd.read_pickle(path)
+
+    return fine_fake
+
+def get_ISOT(path):
+
+    path_real = os.path.join(path, 'True.csv') 
+    path_fake = os.path.join(path, 'Fake.csv') 
+
+    isot_fake = pd.read_csv(path_fake)
+    isot_real = pd.read_csv(path_real)
+
+    isot_real['label'] = 'True'
+    isot_fake['label'] = 'Fake'
+
+    # Concatenate the two datasets
+    df = pd.concat([isot_real, isot_fake]).reset_index()
+
+    return df
+
+def get_Kaggle_Fake_and_Real_News(path):
+
+    path_real = os.path.join(path, 'True.csv') 
+    path_fake = os.path.join(path, 'Fake.csv') 
+
+    fake = pd.read_csv(path_fake)
+    real = pd.read_csv(path_real)
+
+    real['label'] = 'True'
+    fake['label'] = 'Fake'
+
+    # Concatenate the two datasets
+    df = pd.concat([real, fake]).reset_index()
+
+    return df
+
+def get_Kaggle_Fake_News_test(path):
+
+    test_path = os.path.join(path, 'test.csv') 
+    labels_path = os.path.join(path, 'submit.csv')
+
+    test = pd.read_csv(test_path, index_col='id')
+    labels = pd.read_csv(labels_path)
+
+    kfn = test.merge(labels, on='id')
+
+    return kfn
+
+def get_LIAR(path):
+
+    column_names = ["file_name", "label", "title", '1','2','3','4','5','6','7','8','9','10','11']
+    liar = pd.read_csv(path, sep='\t', header=None, names=column_names)
+
+    return liar
+
+def get_LIAR_PLUS(path):
+
+    column_names = ["file_name", "label", "title", '1','2','3','4','5','6','7','8','9','10','11','body']
+    liar = pd.read_csv(path, sep='\t', header=None, names=column_names)
+
+    return liar

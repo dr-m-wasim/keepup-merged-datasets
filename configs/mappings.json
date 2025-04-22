@@ -93,5 +93,516 @@
       "0": "fake",
       "1": "real"
     }
+  },
+  "BET-Bend-the-Truth": {
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {}
+  },
+  "BuzzFeed-2017":{
+    "column_mapping": {
+      "title": "title",
+      "body": "maintext",
+      "label": "veracity"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "mostly false": "fake",
+      "no factual content": "fake",
+      "mixture of true and false": "fake"
+    }
+  },
+  "BuzzFeed-Political-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "Real": "real",
+      "Fake": "fake"
+    }
+  },
+  "Covid19-FN":{
+    "column_mapping": {
+      "title": "Title ",
+      "body": "Text",
+      "label": "Label"
+    },
+    "label_mapping": {
+      "True": "real",
+      "False": "fake"
+    }
+  },
+  "BanFakeNews-2.0":{
+    "column_mapping": {
+      "title": "Headline",
+      "body": "Content",
+      "label": "Label"
+    },
+    "label_mapping": {
+      "1": "real",
+      "0": "fake"
+    }
+  },
+  "CHECKED-COVID19":{
+    "column_mapping": {
+      "title": "title",
+      "body": "content",
+      "label": "label"
+    },
+    "label_mapping": {
+      "0": "real",
+      "1": "fake"
+    }
+  },
+  "Covid-19-Fake-News-Detection":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "1": "real",
+      "0": "fake"
+    }
+  },
+  "COVID19-Rumor-Data":{
+    "column_mapping": {
+      "title": "content",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "T": "real",
+      "F": "fake"
+    }
+  },
+  "CT-FAN-22-eng-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "our rating"
+    },
+    "label_mapping": {
+      "TRUE": "real",
+      "FALSE": "fake",
+      "partially false": "fake"
+    }
+  },
+  "CT-FAN-22-ger-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "our rating"
+    },
+    "label_mapping": {
+      "TRUE": "real",
+      "FALSE": "fake",
+      "partially false": "fake"
+    }
+  },
+  "CT-FAN-22-eng-dev":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "our rating"
+    },
+    "label_mapping": {
+      "TRUE": "real",
+      "FALSE": "fake",
+      "partially false": "fake"
+    }
+  },
+  "CT-FAN-22-eng-train":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "our rating"
+    },
+    "label_mapping": {
+      "TRUE": "real",
+      "FALSE": "fake",
+      "partially false": "fake"
+    }
+  },
+  "English-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "REAL": "real",
+      "FAKE": "fake"
+    }
+  },
+  "Fake.br-Corpus(FNC0, FNC1, FNC2)":{
+    "column_mapping": {
+      "title": "title",
+      "body": "preprocessed_news",
+      "label": "label"
+    },
+    "label_mapping": {
+      "true": "real",
+      "fake": "fake"
+    }
+  },
+  "FakeNewsCorpus-Spanish-train":{
+    "column_mapping": {
+      "title": "Headline",
+      "body": "Text",
+      "label": "Category"
+    },
+    "label_mapping": {
+      "True": "real",
+      "Fake": "fake"
+    }
+  },
+  "FakeNewsCorpus-Spanish-test":{
+    "column_mapping": {
+      "title": "HEADLINE",
+      "body": "TEXT",
+      "label": "CATEGORY"
+    },
+    "label_mapping": {
+      "True": "real",
+      "Fake": "fake"
+    }
+  },
+  "FakeNewsCorpus-Spanish-dev":{
+    "column_mapping": {
+      "title": "Headline",
+      "body": "Text",
+      "label": "Category"
+    },
+    "label_mapping": {
+      "True": "real",
+      "Fake": "fake"
+    }
+  },
+  "FakeNewsNet":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {}
+  },
+  "Fake-News-Urdu":{
+    "column_mapping": {
+      "title": "title",
+      "body": "news",
+      "label": "label"
+    },
+    "label_mapping": {}
+  },
+  "FA-KES":{
+    "column_mapping": {
+      "title": "article_title",
+      "body": "article_content",
+      "label": "labels"
+    },
+    "label_mapping": {
+      "1": "real",
+      "0": "fake"
+    }
+  },
+  "Fang":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {}
+  },
+  "FANG-Covid":{
+    "column_mapping": {
+      "title": "header",
+      "body": "article",
+      "label": "label"
+    },
+    "label_mapping": {}
+  },
+  "FineFake":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "1": "real",
+      "0": "fake"
+    }
+  },
+  "FNID-FakeNewsNet-dev":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label_fnn"
+    },
+    "label_mapping": {}
+  },
+  "FNID-FakeNewsNet-train":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label_fnn"
+    },
+    "label_mapping": {}
+  },
+  "FNID-FakeNewsNet-test":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label_fnn"
+    },
+    "label_mapping": {}
+  },
+  "FNID-LIAR-dev":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label-liar"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "FNID-LIAR-train":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label-liar"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "FNID-LIAR-test":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "fullText_based_content",
+      "label": "label-liar"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "ISOT": {
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "True": "real",
+      "Fake": "fake"
+    }
+  },
+  "Jruvika-Fake-News-Detection": {
+    "column_mapping": {
+      "title": "Headline",
+      "body": "Body",
+      "label": "Label"
+    },
+    "label_mapping": {
+      "0": "real",
+      "1": "fake"
+    }
+  },
+  "Kaggle-Fake-and-Real-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "True": "real",
+      "Fake": "fake"
+    }
+  },
+  "Kaggle-Fake-News-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "0": "real",
+      "1": "fake"
+    }
+  },
+  "Kaggle-Fake-News-train":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "0": "real",
+      "1": "fake"
+    }
+  },
+  "Kaggle-Fake-News-Sample":{
+    "column_mapping": {
+      "title": "title",
+      "body": "content",
+      "label": "type"
+    },
+    "label_mapping": {
+      "reliable": "real",
+      "fake": "fake", 
+      "conspiracy": "fake", 
+      "rumor": "fake", 
+      "unreliable": "fake"
+    }
+  },
+  "Kaggle-Fake-or-Real-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "REAL": "real",
+      "FAKE": "fake"
+    }
+  },
+  "Kaggle-Getting-Real-about-Fake-news":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "type"
+    },
+    "label_mapping": {
+      "bs": "fake",
+      "bias": "fake",         
+      "conspiracy": "fake",      
+      "hate": "fake",            
+      "satire":"fake",          
+      "state": "fake",           
+      "junksci": "fake",         
+      "fake": "fake" 
+    }
+  },
+  "LIAR-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "LIAR-train":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "LIAR-valid":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "LIAR-PLUS-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "LIAR-PLUS-train":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "LIAR-PLUS-val":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": {
+      "mostly true": "real",
+      "true": "real",
+      "false": "fake",
+      "half-true": "fake",
+      "barely-true": "fake",
+      "pants-fire": "fake"
+    }
+  },
+  "MacIntire":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": {
+      "Real": "real",
+      "FAKE": "fake"
+    }
   }
 }
