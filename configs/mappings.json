@@ -604,5 +604,13 @@
       "Real": "real",
       "FAKE": "fake"
     }
+  },
+  "Misinformation-and-fakenews-and-propaganda":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { }
   }
 }

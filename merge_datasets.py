@@ -60,7 +60,8 @@ DATA_PATHS = {
     #"LIAR-PLUS-train" : r'D:\text datasets\text datasets\LIAR-PLUS\train2.tsv',
     #"LIAR-PLUS-test" : r'D:\text datasets\text datasets\LIAR-PLUS\test2.tsv',
     #"LIAR-PLUS-val" : r'D:\text datasets\text datasets\LIAR-PLUS\val2.tsv',
-    "MacIntire": r'D:\text datasets\text datasets\MacIntire.csv'
+    #"MacIntire": r'D:\text datasets\text datasets\MacIntire.csv',
+    "Misinformation-and-fakenews-and-propaganda": r'D:\text datasets\text datasets\Misinformation-and-fakenews-and-propaganda',
 }
 
 # fill this dictionary for only special cases
@@ -88,12 +89,13 @@ convert_to_df = {
     "LIAR-PLUS-train": get_LIAR_PLUS,
     "LIAR-PLUS-test": get_LIAR_PLUS,
     "LIAR-PLUS-val": get_LIAR_PLUS,
+    "Misinformation-and-fakenews-and-propaganda": get_Misinformation_and_fakenews_and_propaganda
 }
 
 def update_fields(dataset_name, df):
     if dataset_name in ("ANS-Arabic-Satirical-News-train","ANS-Arabic-Satirical-News-test","ANS-Arabic-Satirical-News-dev","Ax-to-Grind-Urdu-Dataset","BAAI_biendata2019", "COVID19-Rumor-Data","Fang","LIAR-test", "LIAR-train", "LIAR-valid"):
         df['body'] = ''
-    elif dataset_name in ("Arabic-Satirical-News", "BET-Bend-the-Truth","CHECKED-COVID19","Fake.br-Corpus(FNC0, FNC1, FNC2)","Fake-News-Urdu","FineFake"):
+    elif dataset_name in ("Arabic-Satirical-News", "BET-Bend-the-Truth","CHECKED-COVID19","Fake.br-Corpus(FNC0, FNC1, FNC2)","Fake-News-Urdu","FineFake","Misinformation-and-fakenews-and-propaganda"):
         df['title'] = ''
 
     return df

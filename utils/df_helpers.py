@@ -325,3 +325,19 @@ def get_LIAR_PLUS(path):
     liar = pd.read_csv(path, sep='\t', header=None, names=column_names)
 
     return liar
+
+def get_Misinformation_and_fakenews_and_propaganda(path):
+
+    path_real = os.path.join(path, r'DataSet_Misinfo_FAKE.csv\DataSet_Misinfo_FAKE.csv') 
+    path_fake = os.path.join(path, r'DataSet_Misinfo_TRUE.csv\DataSet_Misinfo_TRUE.csv') 
+
+    fake = pd.read_csv(path_fake)
+    real = pd.read_csv(path_real)
+
+    real['label'] = 'real'
+    fake['label'] = 'fake'
+
+    # Concatenate the two datasets
+    df = pd.concat([real, fake]).reset_index()
+
+    return df
