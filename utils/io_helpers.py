@@ -10,6 +10,8 @@ def load_dataset(file_path):
         return pd.read_json(file_path)
     elif ext == ".tsv":
         return pd.read_csv(file_path, sep="\t")
+    elif ext == '.xlsx':
+        return pd.read_excel(file_path)  # Add this line to support Excel
     else:
         raise ValueError(f"Unsupported file format: {ext}")
 

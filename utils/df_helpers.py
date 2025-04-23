@@ -286,19 +286,19 @@ def get_ISOT(path):
 
 def get_Kaggle_Fake_and_Real_News(path):
 
-    path_real = os.path.join(path, 'True.csv') 
+    #path_real = os.path.join(path, 'True.csv') 
     path_fake = os.path.join(path, 'Fake.csv') 
 
     fake = pd.read_csv(path_fake)
-    real = pd.read_csv(path_real)
+    #real = pd.read_csv(path_real)
 
-    real['label'] = 'True'
+    #real['label'] = 'True'
     fake['label'] = 'Fake'
 
     # Concatenate the two datasets
-    df = pd.concat([real, fake]).reset_index()
+    #df = pd.concat([real, fake]).reset_index()
 
-    return df
+    return fake
 
 def get_Kaggle_Fake_News_test(path):
 
@@ -328,8 +328,8 @@ def get_LIAR_PLUS(path):
 
 def get_Misinformation_and_fakenews_and_propaganda(path):
 
-    path_real = os.path.join(path, r'DataSet_Misinfo_FAKE.csv\DataSet_Misinfo_FAKE.csv') 
-    path_fake = os.path.join(path, r'DataSet_Misinfo_TRUE.csv\DataSet_Misinfo_TRUE.csv') 
+    path_real = os.path.join(path, 'DataSet_Misinfo_FAKE.csv','DataSet_Misinfo_FAKE.csv') 
+    path_fake = os.path.join(path, 'DataSet_Misinfo_TRUE.csv','DataSet_Misinfo_TRUE.csv') 
 
     fake = pd.read_csv(path_fake)
     real = pd.read_csv(path_real)

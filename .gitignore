@@ -36,6 +36,9 @@ processed_data/
 *.manifest
 *.spec
 
+run_merge_datasets.sh
+*.out
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
