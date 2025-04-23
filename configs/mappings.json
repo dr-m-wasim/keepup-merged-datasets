@@ -630,13 +630,13 @@
   },
   "Politifact-political-rumor":{
     "column_mapping": {
-      "title": "title",
+      "title": "Claim Text",
       "body": "body",
-      "label": "label"
+      "label": "Veracity"
     },
     "label_mapping": { 
-      "Fake": "fake",
-      "Real": "real"
+      "False": "fake",
+      "True": "real"
     }
   },
   "Random-Political-News": {
