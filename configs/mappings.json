@@ -612,5 +612,165 @@
       "label": "label"
     },
     "label_mapping": { }
+  },
+  "NewPolitifact":{
+    "column_mapping": {
+      "title": "Statement",
+      "body": "body",
+      "label": "Result"
+    },
+    "label_mapping": { 
+      "FALSE": "fake",
+      "half-true": "fake",
+      "mostly-true": "real",
+      "barely-true": "fake",
+      "TRUE": "real",
+      "pants-fire": "fake"
+    }
+  },
+  "Politifact-political-rumor":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "Fake": "fake",
+      "Real": "real"
+    }
+  },
+  "Random-Political-News": {
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "Fake": "fake",
+      "Real": "real"
+    }
+  },
+  "ReCOVery": {
+    "column_mapping": {
+      "title": "title",
+      "body": "body_text",
+      "label": "reliability"
+    },
+    "label_mapping": { 
+      "0": "fake",
+      "1": "real"
+    }
+  },
+  "RUN-NewsReliability-train":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "Unreliable": "fake",
+      "Reliable": "real"
+    }
+  },
+  "RUN-NewsReliability-test":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "Unreliable": "fake",
+      "Reliable": "real"
+    }
+  },
+  "Snopes-Claims":{
+    "column_mapping": {
+      "title": "title",
+      "body": "body",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "false": "fake",
+      "true": "real",
+      "mostly false": "fake",
+      "mostly true": "real"
+    }
+  },
+  "Snopes-rumors":{
+    "column_mapping": {
+      "title": "Claim Text",
+      "body": "body",
+      "label": "Veracity"
+    },
+    "label_mapping": { 
+      "False": "fake",
+      "True": "real"
+    }
+  },
+  "Spanish-Political-News":{
+    "column_mapping": {
+      "title": "Titulo",
+      "body": "Descripcion",
+      "label": "Label"
+    },
+    "label_mapping": { 
+      "0": "fake",
+      "1": "real"
+    }
+  },
+  "True-and-Fake-News-election":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "fake": "fake",
+      "true": "real"
+    }
+  },
+  "True-and-Fake-News-brexit":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "fake": "fake",
+      "true": "real"
+    }
+  },
+  "Truth-seeker-2024":{
+    "column_mapping": {
+      "title": "statement",
+      "body": "body",
+      "label": "target"
+    },
+    "label_mapping": { 
+      "False": "fake",
+      "True": "real"
+    }
+  },
+  "UFN-Urdu-Fake-News":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "1": "fake",
+      "0": "real"
+    }
+  },
+  "WELFake":{
+    "column_mapping": {
+      "title": "title",
+      "body": "text",
+      "label": "label"
+    },
+    "label_mapping": { 
+      "0": "fake",
+      "1": "real"
+    }
   }
 }

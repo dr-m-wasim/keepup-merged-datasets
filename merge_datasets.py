@@ -61,7 +61,22 @@ DATA_PATHS = {
     #"LIAR-PLUS-test" : r'D:\text datasets\text datasets\LIAR-PLUS\test2.tsv',
     #"LIAR-PLUS-val" : r'D:\text datasets\text datasets\LIAR-PLUS\val2.tsv',
     #"MacIntire": r'D:\text datasets\text datasets\MacIntire.csv',
-    "Misinformation-and-fakenews-and-propaganda": r'D:\text datasets\text datasets\Misinformation-and-fakenews-and-propaganda',
+    #"Misinformation-and-fakenews-and-propaganda": r'D:\text datasets\text datasets\Misinformation-and-fakenews-and-propaganda',
+    #"NewPolitifact": r'D:\text datasets\text datasets\newpolitifactdataset.csv',
+    #"Politifact-political-rumor": r'D:\text datasets\text datasets\Politifact-political-rumor.tsv',
+    #"Random-Political-News": r'D:\text datasets\text datasets\Random-Political-News\Public Data\Random Poltical News Dataset',
+    #"ReCOVery": r'D:\text+image\text+image\ReCOVery\ReCOVery-master\dataset\recovery-news-data.csv',
+    #"RUN-NewsReliability-train": r'D:\text datasets\text datasets\RUN-NewsReliability\training_set.json',
+    #"RUN-NewsReliability-test": r'D:\text datasets\text datasets\RUN-NewsReliability\test_set.json',
+    #"Snopes-Claims": r'D:\text datasets\text datasets\Snopes-claims\Snopes',
+    #"Snopes-rumors": r'D:\text datasets\text datasets\snopes.tsv',
+    #"Spanish-Political-News": r'D:\text datasets\text datasets\Spanish-political-news\D57000_complete.csv',
+    #"True-and-Fake-News-election": r'D:\text datasets\text datasets\DTN_True-and-Fake-News\DTN_data\2016_election',
+    #"True-and-Fake-News-brexit": r'D:\text datasets\text datasets\DTN_True-and-Fake-News\DTN_data\brexit',
+    #"Truth-seeker-2024": r'D:\text datasets\text datasets\TruthSeeke 2024\TruthSeeker2023\Truth_Seeker_Model_Dataset.csv',
+    #"UFN-Urdu-Fake-News": r'D:\text datasets\text datasets\UFN-Urdu-Fake-News\Urdu-Fake-News-master\UFN\UFN',
+    "WELFake": r'D:\text datasets\text datasets\WELFake\WELFake_Dataset.csv'
+    
 }
 
 # fill this dictionary for only special cases
@@ -89,13 +104,23 @@ convert_to_df = {
     "LIAR-PLUS-train": get_LIAR_PLUS,
     "LIAR-PLUS-test": get_LIAR_PLUS,
     "LIAR-PLUS-val": get_LIAR_PLUS,
-    "Misinformation-and-fakenews-and-propaganda": get_Misinformation_and_fakenews_and_propaganda
+    "Misinformation-and-fakenews-and-propaganda": get_Misinformation_and_fakenews_and_propaganda,
+    "Politifact-political-rumor": get_Politifact_political_rumor,
+    "Random-Political-News": get_BuzzFeed_Political_News,
+    "RUN-NewsReliability-train": get_RUN_NewsReliability,
+    "RUN-NewsReliability-test": get_RUN_NewsReliability,
+    "Snopes-Claims": get_Snopes_Claims,
+    "Snopes-rumors": get_Politifact_political_rumor,
+    "Spanish-Political-News": get_Spanish_Political_News,
+    "True-and-Fake-News-election": get_True_and_Fake_News,
+    "True-and-Fake-News-brexit": get_True_and_Fake_News,
+    "UFN-Urdu-Fake-News": get_UFN_Urdu_Fake_News
 }
 
 def update_fields(dataset_name, df):
-    if dataset_name in ("ANS-Arabic-Satirical-News-train","ANS-Arabic-Satirical-News-test","ANS-Arabic-Satirical-News-dev","Ax-to-Grind-Urdu-Dataset","BAAI_biendata2019", "COVID19-Rumor-Data","Fang","LIAR-test", "LIAR-train", "LIAR-valid"):
+    if dataset_name in ("ANS-Arabic-Satirical-News-train","ANS-Arabic-Satirical-News-test","ANS-Arabic-Satirical-News-dev","Ax-to-Grind-Urdu-Dataset","BAAI_biendata2019", "COVID19-Rumor-Data","Fang","LIAR-test", "LIAR-train", "LIAR-valid", "NewPolitifact", "Politifact-political-rumor","Snopes-rumors","Truth-seeker-2024"):
         df['body'] = ''
-    elif dataset_name in ("Arabic-Satirical-News", "BET-Bend-the-Truth","CHECKED-COVID19","Fake.br-Corpus(FNC0, FNC1, FNC2)","Fake-News-Urdu","FineFake","Misinformation-and-fakenews-and-propaganda"):
+    elif dataset_name in ("Arabic-Satirical-News", "BET-Bend-the-Truth","CHECKED-COVID19","Fake.br-Corpus(FNC0, FNC1, FNC2)","Fake-News-Urdu","FineFake","Misinformation-and-fakenews-and-propaganda", "True-and-Fake-News-election", "True-and-Fake-News-brexit", "UFN-Urdu-Fake-News"):
         df['title'] = ''
 
     return df

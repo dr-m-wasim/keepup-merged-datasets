@@ -341,3 +341,115 @@ def get_Misinformation_and_fakenews_and_propaganda(path):
     df = pd.concat([real, fake]).reset_index()
 
     return df
+
+def get_Politifact_political_rumor(path):
+
+    column_names = ["Claim Text", "Veracity", "Category", "Published Date"]
+    ppr = pd.read_csv(path, sep='\t', names=column_names)
+
+    return ppr
+
+def get_RUN_NewsReliability(path):
+
+    with open(path, 'r', encoding='utf-8') as f:
+        raw_data = json.load(f)
+
+    # Initialize a list to store records
+    records = []
+
+    # Iterate through each key (like "0", "1", etc.)
+    for key, value in raw_data.items():
+
+        text = value.get("TEXT", "").strip()
+        title = value.get("TITLE", "").strip()
+        alba = value.get("VALUE_ALBA", "")
+
+        
+        # Combine all into a single dict (flattened)
+        record = {
+            "title": title,
+            "text": text,
+            "label": alba
+        }
+        
+        records.append(record)
+
+    # Convert to DataFrame
+    df = pd.DataFrame(records)
+
+    return df
+
+def get_Snopes_Claims(path):
+
+    extracted_data = []
+
+    # Loop through all files in the folder
+    for filename in os.listdir(path):
+        if filename.endswith(".json"):
+            file_path = os.path.join(path, filename)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    claim = data.get("Claim", "")
+                    description = data.get("Description", "")
+                    credibility = data.get("Credibility", "")
+                    record = {
+                        'title' : claim, 
+                        'body' : description, 
+                        'label' : credibility
+                    }
+                    extracted_data.append(record)
+            except Exception as e:
+                print(f"Failed to process {filename}: {e}")
+
+    # Convert to DataFrame
+    df = pd.DataFrame(extracted_data)
+
+    return df
+
+def get_Spanish_Political_News(path):
+
+    spn = pd.read_csv(path, sep=';')
+
+    return spn
+
+def get_True_and_Fake_News(path):
+
+    column_names = ["label", "text"]
+    combined_df = pd.DataFrame(columns=column_names)
+
+    for fname in os.listdir(path):
+        if fname.endswith(".txt"):
+            file_path = os.path.join(path, fname)
+
+            # Use Python engine to handle irregular separators
+            df = pd.read_csv(file_path, sep="#", header=None, names=column_names, engine='python',  on_bad_lines='skip')
+
+            # Replace tab characters with spaces
+            df = df.map(lambda x: x.replace('\t', ' ') if isinstance(x, str) else x)
+
+            combined_df = pd.concat([combined_df, df], ignore_index=True)
+
+    return combined_df
+
+def get_UFN_Urdu_Fake_News(path):
+
+    data = []
+
+    # Loop through folders labeled '0' and '1'
+    for label in ['0', '1']:
+        folder_path = os.path.join(path, label)
+        
+        for filename in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, filename)
+            
+            # Read only text files
+            if os.path.isfile(file_path) and filename.endswith('.txt'):
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    text = file.read().replace('\t', ' ')  # Optional: remove tabs
+                    data.append({'text': text, 'label': int(label)})
+
+    # Create DataFrame
+    df = pd.DataFrame(data)
+
+    return df
