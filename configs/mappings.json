@@ -298,7 +298,10 @@
       "body": "news",
       "label": "label"
     },
-    "label_mapping": {}
+    "label_mapping": {
+      "real": "real",
+      "fake ": "fake"
+    }
   },
   "FA-KES":{
     "column_mapping": {
