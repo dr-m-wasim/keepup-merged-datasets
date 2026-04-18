@@ -190,7 +190,7 @@
     "label_mapping": {
       "TRUE": "real",
       "FALSE": "fake",
-      "partially false": "fake"
+      "partially false": "partially false"
     }
   },
   "CT-FAN-22-ger-test":{
@@ -202,7 +202,7 @@
     "label_mapping": {
       "TRUE": "real",
       "FALSE": "fake",
-      "partially false": "fake"
+      "partially false": "partially false"
     }
   },
   "CT-FAN-22-eng-dev":{
@@ -214,7 +214,7 @@
     "label_mapping": {
       "TRUE": "real",
       "FALSE": "fake",
-      "partially false": "fake"
+      "partially false": "partially false"
     }
   },
   "CT-FAN-22-eng-train":{
@@ -226,7 +226,7 @@
     "label_mapping": {
       "TRUE": "real",
       "FALSE": "fake",
-      "partially false": "fake"
+      "partially false": "partially false"
     }
   },
   "English-News":{
@@ -372,12 +372,12 @@
       "label": "label-liar"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "FNID-LIAR-train":{
@@ -387,12 +387,12 @@
       "label": "label-liar"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "FNID-LIAR-test":{
@@ -402,12 +402,12 @@
       "label": "label-liar"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "ISOT": {
@@ -474,8 +474,8 @@
     "label_mapping": {
       "reliable": "real",
       "fake": "fake", 
-      "conspiracy": "fake", 
-      "rumor": "fake", 
+      "conspiracy": "conspiracy", 
+      "rumor": "rumor", 
       "unreliable": "fake"
     }
   },
@@ -498,12 +498,12 @@
     },
     "label_mapping": {
       "bs": "fake",
-      "bias": "fake",         
-      "conspiracy": "fake",      
-      "hate": "fake",            
-      "satire":"fake",          
-      "state": "fake",           
-      "junksci": "fake",         
+      "bias": "bias",         
+      "conspiracy": "conspiracy",      
+      "hate": "hate",            
+      "satire":"satire",          
+      "state": "state",           
+      "junksci": "junksci",         
       "fake": "fake" 
     }
   },
@@ -514,12 +514,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "LIAR-train":{
@@ -529,12 +529,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "LIAR-valid":{
@@ -544,12 +544,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "LIAR-PLUS-test":{
@@ -559,12 +559,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "LIAR-PLUS-train":{
@@ -574,12 +574,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "LIAR-PLUS-val":{
@@ -589,12 +589,12 @@
       "label": "label"
     },
     "label_mapping": {
-      "mostly true": "real",
+      "mostly true": "mostly-true",
       "true": "real",
       "false": "fake",
-      "half-true": "fake",
-      "barely-true": "fake",
-      "pants-fire": "fake"
+      "half-true": "half-true",
+      "barely-true": "barely-true",
+      "pants-fire": "pants-fire"
     }
   },
   "MacIntire":{
@@ -624,11 +624,11 @@
     },
     "label_mapping": { 
       "FALSE": "fake",
-      "half-true": "fake",
-      "mostly-true": "real",
-      "barely-true": "fake",
+      "half-true": "half-true",
+      "mostly-true": "mostly-true",
+      "barely-true": "barely-true",
       "TRUE": "real",
-      "pants-fire": "fake"
+      "pants-fire": "pants-fire"
     }
   },
   "Politifact-political-rumor":{
@@ -695,8 +695,8 @@
     "label_mapping": { 
       "false": "fake",
       "true": "real",
-      "mostly false": "fake",
-      "mostly true": "real"
+      "mostly false": "mostly-false",
+      "mostly true": "mostly-true"
     }
   },
   "Snopes-rumors":{
